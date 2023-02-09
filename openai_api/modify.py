@@ -19,6 +19,6 @@ if __name__ == "__main__":
         presence_penalty=0,
     )
 
-    cleaned_text = response["choices"][0]["text"]
+    cleaned_text = response["choices"][0]["text"].strip()
 
     print(cleaned_text)
