@@ -4,7 +4,8 @@ import openai
 
 if __name__ == "__main__":
     redundant_text = sys.argv[1]
-    prompt = "次の文章を簡潔にしてください。\n" + redundant_text
+    direction = "次の文章を簡潔にしてください。"
+    prompt = direction + "\n" + redundant_text
 
     openai.api_key = os.environ.get("API_KEY")
 
