@@ -1,12 +1,16 @@
 import os
+import sys
 import openai
 
 if __name__ == "__main__":
+    redundant_text = sys.argv[1]
+    prompt = "次の文章を簡潔にしてください。\n" + redundant_text
+
     openai.api_key = os.environ.get("API_KEY")
 
     response = openai.Completion.create(
         model="text-davinci-003",
-        prompt="次の文章を簡潔にしてください。\n最近なんていうか最近英語の会話を話すのが苦手。",
+        prompt=prompt,
         temperature=0.7,
         max_tokens=256,
         top_p=1,
